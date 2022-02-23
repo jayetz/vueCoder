@@ -11,17 +11,29 @@
 </head>
 <body>
 
-    <div id="app">
-        <p>{{message}}</p>
+    <div class="contador" id="app">
+        <p>{{contador}}</p>
+        <button type="button" v-on:click="disminuir">Disminuir</button>
+        <button type="button" v-on:click="aumentar">Aumentar</button>
 
     </div>
 <script>
-    new Vue({
+    const app = new Vue({
         el: '#app',
         data: {
-            message: 'Ahora sí'
+            contador: 0
+        },
+        methods:{
+            aumentar(){
+                this.contador++
+            },
+            disminuir(){
+                this.contador--
+            }
         }
     })
+
+
 </script>
 
 
